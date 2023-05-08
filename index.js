@@ -2,6 +2,8 @@ const express = require('express');
 const port = 5000;
 const app = express();
 
+const db = require('./config/mongoose');
+
 app.get('/',(req,res)=>{
     res.end('Home');
 });
