@@ -24,3 +24,13 @@ module.exports.create = async (req, res) => {
         return res.status(400).send(err);
     }
 };
+
+module.exports.delete = async (req,res)=>{
+    try{
+        await Contacts.findByIdAndDelete(req.params.id);
+        return res.redirect('/');
+    }catch (err) {
+        res.redirect('/');
+        return res.status(400).send(err);
+    }
+};

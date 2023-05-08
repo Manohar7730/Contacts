@@ -4,7 +4,7 @@ const app = express();
 
 const db = require('./config/mongoose');
 
-app.use(express.urlencoded());
+app.use(express.urlencoded({extended : true}));
 
 app.set('view engine','ejs');
 app.set('views','./views');
