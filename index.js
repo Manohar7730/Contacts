@@ -4,9 +4,8 @@ const app = express();
 
 const db = require('./config/mongoose');
 
-app.get('/',(req,res)=>{
-    res.end('Home');
-});
+const contactRouter = require('./routes/home');
+app.use('/',contactRouter);
 
 app.listen(port,(err)=>{
     if(err){
