@@ -4,6 +4,11 @@ const app = express();
 
 const db = require('./config/mongoose');
 
+// app.use(bodyParser.urlencoded({ extended: true }));
+
+app.set('view engine','ejs');
+app.set('views','./views');
+
 const contactRouter = require('./routes/home');
 app.use('/',contactRouter);
 
